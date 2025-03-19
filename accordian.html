@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        h1 {
+            text-align: center;
+        }
+        .accordion {
+            width: 100%;
+            background-color: #eee;
+            border: none;
+            outline: none;
+            color: #444;
+            text-align: left;
+            padding: 18px;
+            font-size: 25px;
+            transition: 0.4s;
+
+        }
+        .active, .accordion:hover {
+            background-color: #ccc;
+        }
+        p {
+            font-size: 25px;
+        }
+
+        .section {
+            display: none;
+            background-color: white;
+            overflow: hidden;
+            padding: 0 18px;
+        }
+
+         .accordion:after {
+            content : '\02795';
+            float: right;
+            font-size: 15px;
+            margin-left: 15px;
+            color: #777;
+        }
+        .active:after {
+            content : '\2796';
+        }
+
+    </style>
+    <title>Accordion</title>
+</head>
+<body>
+    <h1>Accordion</h1>
+    <button class="accordion">Section1</button>
+    <div class="section">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Non, ea. Odit rem rerum blanditiis! Voluptate unde, itaque quaerat iure tempora rem nisi voluptates nemo earum accusamus minima non possimus ipsa?</p>
+    </div>
+
+    <button class="accordion">Section 2</button>
+    <div class="section"><p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate maxime veniam voluptatibus, repellendus sunt ipsa soluta culpa, vitae minima dolorem aut facere. Odit iusto sint voluptas perferendis quidem, vero nisi.</p>
+    </div>
+
+    <button class="accordion">Section 3</button>
+    <div class="section"><p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam, ea. Quo labore, repellendus vitae laboriosam deserunt nemo quae natus voluptates iure, assumenda minima nobis, dolores hic a nesciunt molestiae pariatur?
+    </p></div>
+
+    <script>
+        let sec = document.getElementsByClassName("accordion");
+        
+        for(let i=0;i<sec.length; i++){
+            sec[i].addEventListener('click',function(){
+                this.classList.toggle('active');
+                let panel = this.nextElementSibling;
+                
+                if(panel.style.display == 'block'){
+                    panel.style.display = 'none';
+                }
+                else{
+                    panel.style.display = 'block';
+                }
+            })
+        };
+
+//         var acc = document.getElementsByClassName("accordion");
+// var i;
+
+// for (i = 0; i < acc.length; i++) {
+//   acc[i].addEventListener("click", function() {
+//     this.classList.toggle("active");
+//     var panel = this.nextElementSibling;
+//     if (panel.style.maxHeight) {
+//       panel.style.maxHeight = null;
+//     } else {
+//       panel.style.maxHeight = panel.scrollHeight + "px";
+//     }
+//   });
+// }
+    </script>
+</body>
+</html>
